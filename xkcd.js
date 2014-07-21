@@ -11,6 +11,7 @@ $(document).ready(function(){
       url: $(this).attr('href'),
     })
     .done(function(data) {
+       $('.images').empty();
       data.forEach(function(comic) {
         var image = $('<img>').attr('src', comic.img);
         $('.images').append(image);
@@ -22,7 +23,6 @@ $(document).ready(function(){
     .always(function() {
       console.log("complete");
     });
-
   });
 });
 
